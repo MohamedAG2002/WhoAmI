@@ -1,0 +1,13 @@
+#pragma once
+
+namespace audio {
+
+// Audio manager functions
+////////////////////////////////////////////////
+void init();
+void shutdown();
+void update();
+void reset();
+////////////////////////////////////////////////
+
+}

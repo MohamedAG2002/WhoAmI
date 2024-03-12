@@ -1,0 +1,3 @@
+/home/mohamed/Dev/C++/Raylib/WhoAmI/build/CMakeFiles/WhoAmI.dir
+/home/mohamed/Dev/C++/Raylib/WhoAmI/build/CMakeFiles/edit_cache.dir
+/home/mohamed/Dev/C++/Raylib/WhoAmI/build/CMakeFiles/rebuild_cache.dir
