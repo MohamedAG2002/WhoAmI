@@ -15,8 +15,8 @@ text_t text_create(const std::string& str, int font_size, Vector2 position, Colo
     .font_size = font_size, 
     .position = position,
     .size = MeasureTextEx(GetFontDefault(), str.c_str(), font_size, 1.0f), 
-    .offset = Vector2(0.0f, 0.0f), 
-    .color = Color(col.r, col.g, col.b, alpha),
+    .offset = Vector2{0.0f, 0.0f}, 
+    .color = Color{col.r, col.g, col.b, (unsigned char)alpha},
   };
 }
 
@@ -46,7 +46,7 @@ void text_fade_out(text_t& text) {
 void text_render(text_t& text) {
   DrawTextEx(GetFontDefault(), 
              text.str.c_str(), 
-             Vector2(text.position.x - text.size.x / 2.0f, text.position.y - text.size.y / 2.0f), 
+             Vector2{text.position.x - text.size.x / 2.0f, text.position.y - text.size.y / 2.0f}, 
              text.font_size, 
              1.0f, 
              text.color); 

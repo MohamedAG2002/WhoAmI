@@ -1,4 +1,4 @@
-#include "collision/collider.h"
+#include "collider.h"
 
 #include <raylib.h>
 #include <raymath.h>
@@ -93,11 +93,11 @@ collision_data_t test_collisions(const collider_t& coll1, const collider_t& coll
 }
 
 void collider_update_vertices(collider_t& coll) {
-  Vector2 min = Vector2(coll.position.x, coll.position.y);
-  Vector2 max = Vector2(coll.position.x + coll.size.x, coll.position.y + coll.size.y);
+  Vector2 min = Vector2{coll.position.x, coll.position.y};
+  Vector2 max = Vector2{coll.position.x + coll.size.x, coll.position.y + coll.size.y};
   coll.vertices[0] = min;
-  coll.vertices[1] = Vector2(min.x, max.y);
-  coll.vertices[2] = Vector2(max.x, min.y);
+  coll.vertices[1] = Vector2{min.x, max.y};
+  coll.vertices[2] = Vector2{max.x, min.y};
   coll.vertices[3] = max;
 }
 ////////////////////////////////////////////////////

@@ -67,7 +67,7 @@ void add_dialogue_callback(const entities::trigger_t& trigger) {
     return;
   }
 
-  Vector2 pos = Vector2(trigger.position.x + trigger.size.x / 2.0f, trigger.position.y - 56.0f);
+  Vector2 pos = Vector2{trigger.position.x + trigger.size.x / 2.0f, trigger.position.y - 56.0f};
   s_man->texts.push_back(ui::text_create(s_man->dialogue[s_man->total_text++], 15, pos, YELLOW, 0));
 }
 /////////////////////////////////////////////////////

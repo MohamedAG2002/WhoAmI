@@ -99,7 +99,7 @@ main_t* main_create() {
 
   // Camera init 
   main->cam = Camera2D{
-    .offset = Vector2(GetScreenWidth() / 2.0f - 16.0f, main->player.position.y - 32.0f), 
+    .offset = Vector2{GetScreenWidth() / 2.0f - 16.0f, main->player.position.y - 32.0f}, 
     .target = main->player.position,
     .rotation = 0.0f, 
     .zoom = 1.0f,
@@ -110,17 +110,17 @@ main_t* main_create() {
   main->has_started = false; 
   main->background_color = s_curr_color;
 
-  Vector2 screen_size = Vector2(GetScreenWidth(), GetScreenHeight());
-  Vector2 center_screen = Vector2(GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f); 
+  Vector2 screen_size = Vector2{GetScreenWidth() / 1.0f, GetScreenHeight() / 1.0f};
+  Vector2 center_screen = Vector2{GetScreenWidth() / 2.0f, GetScreenHeight() / 2.0f}; 
 
   // Menu texts init 
   main->texts.push_back(ui::text_create("Who Am I?", 50, center_screen, BLACK, 0)); 
-  main->texts.push_back(ui::text_create("[SPACE] PLAY", 30, Vector2(center_screen.x, center_screen.y + 50.0f), Color(0, 0, 0, 0), 0)); 
+  main->texts.push_back(ui::text_create("[SPACE] PLAY", 30, Vector2{center_screen.x, center_screen.y + 50.0f}, Color{0, 0, 0, 0}, 0)); 
 
   // Pause texts init
   main->texts.push_back(ui::text_create("PAUSED", 50, center_screen, GREEN, 255)); 
-  main->texts.push_back(ui::text_create("[P] Resume", 30, Vector2(center_screen.x, center_screen.y + 50.0f), GREEN, 255)); 
-  main->texts.push_back(ui::text_create("[ESC] Exit", 30, Vector2(center_screen.x, center_screen.y + 100.0f), GREEN, 255)); 
+  main->texts.push_back(ui::text_create("[P] Resume", 30, Vector2{center_screen.x, center_screen.y + 50.0f}, GREEN, 255)); 
+  main->texts.push_back(ui::text_create("[ESC] Exit", 30, Vector2{center_screen.x, center_screen.y + 100.0f}, GREEN, 255)); 
 
   collision::add_trigger_callback(level_reset_callback);
   collision::add_trigger_callback(color_lerp_callback);
@@ -245,7 +245,7 @@ void main_reset(main_t* main) {
 
   // Camera reset
   main->cam = Camera2D{
-    .offset = Vector2(GetScreenWidth() / 2.0f - 16.0f, main->player.position.y - 32.0f), 
+    .offset = Vector2{GetScreenWidth() / 2.0f - 16.0f, main->player.position.y - 32.0f}, 
     .target = main->player.position,
     .rotation = 0.0f, 
     .zoom = 1.0f,

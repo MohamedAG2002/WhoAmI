@@ -36,12 +36,12 @@ collider_t collider_add(Vector2 position, Vector2 size, bool dynamic) {
   coll.size = size; 
   coll.is_dynamic = dynamic;
 
-  Vector2 min = Vector2(position.x, position.y);
-  Vector2 max = Vector2(position.x + size.x, position.y + size.y);
+  Vector2 min = Vector2{position.x, position.y};
+  Vector2 max = Vector2{position.x + size.x, position.y + size.y};
   coll.vertex_count = 4;
   coll.vertices[0] = min;
-  coll.vertices[1] = Vector2(min.x, max.y);
-  coll.vertices[2] = Vector2(max.x, min.y);
+  coll.vertices[1] = Vector2{min.x, max.y};
+  coll.vertices[2] = Vector2{max.x, min.y};
   coll.vertices[3] = max;
   
   s_space.colliders.push_back(coll);
@@ -81,7 +81,7 @@ void resolve(entities::player_t& player) {
   for(auto& coll : s_space.collisions) {
     player.position.x -= (coll.normal.x * (coll.depth + 0.7f));
     player.position.y -= (coll.normal.y * (coll.depth));
-    player.velocity = Vector2(0.0f, 0.0f);
+    player.velocity = Vector2{0.0f, 0.0f};
 
     if(coll.normal.y == 1) {
       player.is_grounded = true;

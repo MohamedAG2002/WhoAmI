@@ -58,9 +58,9 @@ void inverse_gravity_callback(const trigger_t& trigger) {
 player_t player_create(Vector2 initial_pos) {
   player_t player =  {
     .position = initial_pos, 
-    .velocity = Vector2(0.0f, 0.0f),
+    .velocity = Vector2{0.0f, 0.0f},
     .color = GREEN,
-    .collider = collision::collider_add(initial_pos, Vector2(32.0f, 64.0f), true),
+    .collider = collision::collider_add(initial_pos, Vector2{32.0f, 64.0f}, true),
     .is_active = true,
     .is_grounded = false,
   };
@@ -84,7 +84,7 @@ void player_update(player_t& player) {
 }
 
 void player_render(player_t& player) {
-  DrawRectangleV(player.position, Vector2(32.0f, 64.0f), player.color);
+  DrawRectangleV(player.position, Vector2{32.0f, 64.0f}, player.color);
 }
 ////////////////////////////////////////
 

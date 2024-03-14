@@ -25,7 +25,7 @@ static level_editor_t s_editor{};
 /////////////////////////////////////////////
 static void add_platform(std::vector<entities::platform_t>& platforms, const Camera2D& cam) {
   Vector2 world_mouse = GetScreenToWorld2D(GetMousePosition(), cam);
-  entities::platform_t plat = entities::platform_create(world_mouse, Vector2(32.0f, 32.0f), BLACK);
+  entities::platform_t plat = entities::platform_create(world_mouse, Vector2{32.0f, 32.0f}, BLACK);
   platforms.push_back(plat);
 
   // Set the current selected platform as the recently added one 
@@ -53,7 +53,7 @@ static void edit_current_platform(const Camera2D& cam) {
   
   Vector2 world_mouse = GetScreenToWorld2D(GetMousePosition(), cam);
   if(CheckCollisionPointRec(world_mouse, rec) && IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
-    s_editor.curr_plat->position = Vector2(world_mouse.x - (size.x / 2.0f), world_mouse.y - (size.y / 2.0f));
+    s_editor.curr_plat->position = Vector2{world_mouse.x - (size.x / 2.0f), world_mouse.y - (size.y / 2.0f)};
   }
 
   s_editor.curr_plat->collider.position = s_editor.curr_plat->position;
@@ -64,7 +64,7 @@ static void edit_current_platform(const Camera2D& cam) {
 static void add_trigger(std::vector<entities::trigger_t>& trigger, int trig_type, const Camera2D& cam) {
   Vector2 world_mouse = GetScreenToWorld2D(GetMousePosition(), cam);
   entities::trigger_t trig = entities::trigger_create(world_mouse, 
-                                                      Vector2(64.0f, 64.0f), 
+                                                      Vector2{64.0f, 64.0f}, 
                                                       (entities::trigger_type_e)trig_type, 
                                                       true);
   trigger.push_back(trig);
@@ -93,7 +93,7 @@ static void edit_current_trigger(const Camera2D& cam) {
 
   Vector2 world_mouse = GetScreenToWorld2D(GetMousePosition(), cam);
   if(CheckCollisionPointRec(world_mouse, rec) && IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
-    s_editor.curr_trig->position = Vector2(world_mouse.x - size.x / 2.0f, world_mouse.y - size.y / 2.0f);
+    s_editor.curr_trig->position = Vector2{world_mouse.x - size.x / 2.0f, world_mouse.y - size.y / 2.0f};
   }
   
   s_editor.curr_trig->collider.position = s_editor.curr_trig->position;
