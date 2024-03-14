@@ -46,3 +46,6 @@ target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
 
 target_include_directories(${PROJECT_NAME} BEFORE PRIVATE ${PROJ_SRC_DIR})
 target_link_libraries(${PROJECT_NAME} PUBLIC ${raylib})
+
+# For windows builds
+add_definitions(-DSDL_MAIN_HANDELED)

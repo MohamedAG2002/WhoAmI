@@ -1,5 +1,5 @@
 # TODO: 
 
 ## Tue 
-- Convert it to emscripten
+- Fullscreen
 - Release on itch

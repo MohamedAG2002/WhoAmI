@@ -31,6 +31,7 @@ void create(const char* title, int width, int height) {
   // Raylib init
   InitWindow(width, height, title);
   SetTargetFPS(60);
+  ToggleFullscreen();
 
   // Systems init 
   audio::init();
