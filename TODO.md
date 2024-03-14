@@ -1,6 +1,6 @@
 # TODO: 
 
 ## Tue 
-- Convert it to emscripten
 - Write an exerpt for itch and git.
+- Convert it to emscripten
 - Release to itch
